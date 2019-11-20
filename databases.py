@@ -13,10 +13,16 @@ session = DBSession()
 
 
 def add_product(name, price, picture_link, description):
-    student_object = Student(
+    product_object = product(
         name=name,
         price=price,
-        picture_link = picture_link
-        description=description)
+        picture_link = picture_link,
+        description = description
+        )
     session.add(product)
     session.commit()
+
+def query_product_by_id(id_number):
+	Product = session.query(Product).filter_by(
+		id_number=id_number).first()
+	return Customer
